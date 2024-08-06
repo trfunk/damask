@@ -1,0 +1,85 @@
+material:
+  - constituents:
+      - phase: A
+        O: [0.7269330069547368, 0.16147427537662046, -0.554233770358445, 0.37191314790633917]
+        v: 1.0
+    homogenization: sx
+  - constituents:
+      - phase: A
+        O: [0.8863782393288464, 0.2929141863155088, -0.10571477271303079, 0.3425774118789065]
+        v: 1.0
+    homogenization: sx
+  - constituents:
+      - phase: A
+        O: [0.8353435415144257, -0.0904267865312782, -0.46247210971462116, -0.2830966472141113]
+        v: 1.0
+    homogenization: sx
+  - constituents:
+      - phase: A
+        O: [0.5983894543855472, 0.39353728890666523, -0.441839501472361, 0.5402187687028419]
+        v: 1.0
+    homogenization: sx
+  - constituents:
+      - phase: A
+        O: [0.7435620787937276, -0.12673250828876073, 0.38588042296279146, -0.5311785062451668]
+        v: 1.0
+    homogenization: sx
+  - constituents:
+      - phase: A
+        O: [0.8036242131275746, 0.5609165218273957, 0.17964793186626826, 0.08536627081181403]
+        v: 1.0
+    homogenization: sx
+  - constituents:
+      - phase: A
+        O: [0.6284331370392382, -0.31009672200495153, -0.6244989682342059, -0.3448374311863755]
+        v: 1.0
+    homogenization: sx
+  - constituents:
+      - phase: A
+        O: [0.6683481440860521, 0.5780207508328343, -0.3698485760352678, 0.28707978108543414]
+        v: 1.0
+    homogenization: sx
+  - constituents:
+      - phase: A
+        O: [0.7913678946313659, 0.06996448130536556, -0.6073227070746156, 0.0009778414754640797]
+        v: 1.0
+    homogenization: sx
+  - constituents:
+      - phase: A
+        O: [0.3872972726831011, 0.7887787089711231, 0.0234027590777424, -0.4767402665116812]
+        v: 1.0
+    homogenization: sx
+  - constituents:
+      - phase: B
+        O: [0.8909273572217709, -0.015271693974136146, 0.41810149906637845, 0.1766532082794946]
+        v: 1.0
+    homogenization: sx
+
+homogenization:
+  sx:
+    N_constituents: 1
+    mechanical: {type: isostrain}
+
+phase:
+  A:
+    lattice: cF
+    rho: 2700.0
+    mechanical:
+      output: [F, P, F_e, F_p, L_p, O, xi_sl, gamma_sl]
+      elastic: {type: Hooke, C_11: 106900000000.0, 'C_11,T': -36850000.0, 'C_11,T^2': -10160.0, C_12: 60550000000.0, 'C_12,T': -8307000.0, 'C_12,T^2': -4353.0, C_44: 28370000000.0, 'C_44,T': -14180000.0, 'C_44,T^2': -3253.0, T_ref: 293.15}
+      plastic:
+        type: phenopowerlaw
+        N_sl: [12]
+        n_sl: 20
+        a_sl: 3.1
+        h_0_sl-sl: 170000000.0
+        xi_0_sl: [5000000.0]
+        xi_inf_sl: [37500000.0]
+        h_sl-sl: [1, 1, 1.4, 1.4, 1.4, 1.4, 1.4]
+        dot_gamma_0_sl: 7.5e-05
+  B:
+    lattice: cF
+    rho: 2700.0
+    mechanical:
+      output: [F, P, F_e, F_p, L_p, O, xi_sl, gamma_sl]
+      elastic: {type: Hooke, C_11: 100000000.0, C_12: 0, C_44: 50000000.0}

@@ -1,0 +1,34 @@
+#added after error 143
+lattice: cF
+rho: 2700.0
+################
+mechanical:
+  output: [F, P, F_e, F_p, L_p, O, xi_sl, gamma_sl]
+  elastic:
+    type: Hooke
+    C_11: 106.9e+9
+    C_11,T: -3.685e+7
+    C_11,T^2: -1.016e+4
+
+    C_12: 60.55e+9
+    C_12,T: -8.307e+6
+    C_12,T^2: -4.353e+3
+
+    C_44: 28.37e+9
+    C_44,T: -1.418e+7
+    C_44,T^2: -3.253e+3
+
+    T_ref: 293.15
+
+  plastic:
+    type: phenopowerlaw
+    N_sl: [12]
+    n_sl: 20
+    a_sl: 3.1
+    h_0_sl-sl: 1.7e+8
+    xi_0_sl: [5.0e+6]
+    xi_inf_sl: [37.5e+6]
+    h_sl-sl: [1, 1, 1.4, 1.4, 1.4, 1.4, 1.4]
+    dot_gamma_0_sl: 7.5e-5
+
+

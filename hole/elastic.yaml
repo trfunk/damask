@@ -1,0 +1,14 @@
+#added after error 143
+lattice: cF
+rho: 2700.0
+################
+mechanical:
+  output: [F, P, F_e, F_p, L_p, O, xi_sl, gamma_sl]
+  elastic:
+    type: Hooke
+    C_11: 1.0e+8
+    C_12: 0
+    C_44: 5.0e+7
+
+
+
